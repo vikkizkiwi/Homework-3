@@ -1,0 +1,364 @@
+/* ===========================
+   GLOBAL RESET + PAGE LAYOUT
+   =========================== */
+html,
+body,
+#root {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, sans-serif;
+   overflow-x: hidden; /* FIX horizontal scroll */
+}
+
+/* Whole page layout */
+.page-container {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+/* Footer sits at the bottom */
+footer {
+   margin-top: auto;
+   width: 100%;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #111;
+   color: #fff;
+   padding: 15px 40px;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.logo {
+   font-family: "Bebas Neue", sans-serif;
+   font-size: 2.5rem;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   color: white;
+}
+
+.logo-img {
+   height: 40px;
+   width: auto;
+}
+
+nav ul {
+   display: flex;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+nav ul li {
+   margin-left: 20px;
+}
+
+nav ul li a {
+   color: #fff;
+   text-decoration: none;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+   color: orange;
+}
+
+.menu-toggle {
+   display: none;
+   font-size: 24px;
+   background: none;
+   border: none;
+   color: white;
+   cursor: pointer;
+}
+
+/* ===========================
+   HERO SECTION (uses PNG)
+   =========================== */
+.hero {
+   height: 80vh;
+   background: url("/images/banner.png") no-repeat center center/cover;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   color: white;
+   padding-left: 40px;
+   box-sizing: border-box;
+}
+
+.hero-text {
+   max-width: 500px;
+   text-align: left;
+}
+
+.hero-text h1 {
+   font-size: 3rem;
+   margin-bottom: 20px;
+}
+
+.hero-text p {
+   font-size: 1.25rem;
+   margin-bottom: 20px;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn {
+   background: orange;
+   color: white;
+   padding: 12px 24px;
+   text-decoration: none;
+   border-radius: 5px;
+   font-size: 1rem;
+   border: none;
+   cursor: pointer;
+}
+
+.btn:hover {
+   background: darkorange;
+}
+
+/* ===========================
+   MENU & CART LAYOUT
+   =========================== */
+.menu-preview {
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 40px;
+   padding: 50px 20px;
+   max-width: 100%;
+   width: 100%;
+   overflow-x: hidden;
+   box-sizing: border-box;
+}
+
+/* Menu item cards container */
+.menu-items {
+   flex: 2;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   max-width: 100%;
+   box-sizing: border-box;
+}
+
+/* Individual menu cards */
+.menu-card {
+   background: #f9f9f9;
+   padding: 20px;
+   border-radius: 10px;
+   width: 250px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+   max-width: 100%;
+   box-sizing: border-box;
+}
+
+.menu-card:hover {
+   transform: translateY(-5px);
+}
+
+.menu-card h3 {
+   font-size: 1.2rem;
+   margin-bottom: 10px;
+   color: #333;
+}
+
+.menu-card p {
+   font-size: 1rem;
+   margin-bottom: 10px;
+   color: #666;
+}
+
+.menu-card .price {
+   font-weight: bold;
+   color: orange;
+   font-size: 1.1rem;
+   display: inline-block;
+   margin-right: 10px; /* ADDED: button spacing */
+}
+
+/* ADDED: Move Add to Cart button slightly to the right */
+.menu-card .btn {
+   margin-left: 5px;
+}
+
+.menu-card img {
+   width: 100%;
+   border-radius: 10px;
+   margin-bottom: 10px;
+}
+
+/* ===========================
+   CART SIDEBAR
+   =========================== */
+.cart-section {
+   flex: 1;
+   background: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   position: sticky;
+   top: 100px;
+   height: fit-content;
+   max-width: 100%;
+   box-sizing: border-box;
+}
+
+.cart-section h2 {
+   margin-bottom: 15px;
+}
+
+.cart-item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #f9f9f9;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+}
+
+.cart-item button {
+   background: orange;
+   color: white;
+   border: none;
+   padding: 6px 12px;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 0.9rem;
+}
+
+.cart-item button:hover {
+   background: darkorange;
+}
+
+#clear-cart {
+   background: orange;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 10px;
+   font-size: 1rem;
+}
+
+#clear-cart:hover {
+   background: darkorange;
+}
+
+/* ===========================
+   ABOUT + CONTACT
+   =========================== */
+.about {
+   padding: 50px 20px;
+   text-align: center;
+   background: #eee;
+}
+
+.contact-preview {
+   padding: 50px 20px;
+   text-align: center;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+   background: #111;
+   color: #fff;
+   text-align: center;
+   padding: 20px;
+}
+
+/* ===========================
+   GALLERY
+   =========================== */
+.gallery h2 {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.gallery-slider {
+   width: 90%;
+   max-width: 1000px;
+   margin: 40px auto;
+}
+
+.swiper-slide img {
+   width: 100%;
+   border-radius: 10px;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+   nav ul {
+      display: none;
+      flex-direction: column;
+      background: #111;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      padding: 10px;
+   }
+
+   nav ul.show {
+      display: flex;
+   }
+
+   .menu-toggle {
+      display: block;
+   }
+
+   .menu-preview {
+      flex-direction: column;
+   }
+
+   .menu-items {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .hero {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+   .hero-text h1 {
+      font-size: 2rem;
+   }
+
+   .hero-text p {
+      font-size: 1rem;
+   }
+
+   .btn {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+   }
+
+   .menu-card {
+      width: 90%;
+   }
+
+   .cart-section {
+      position: static;
+      width: 100%;
+      margin-top: 30px;
+   }
+}
